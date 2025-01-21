@@ -8,7 +8,6 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"net/url"
 	"strings"
 
@@ -342,7 +341,7 @@ func getSessionValue(store *session.Session, key string) (string, error) {
 	if err != nil {
 		return "", err
 	}
-	s, err := ioutil.ReadAll(r)
+	s, err := io.ReadAll(r)
 	if err != nil {
 		return "", err
 	}
